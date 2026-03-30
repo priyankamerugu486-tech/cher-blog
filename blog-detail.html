@@ -1,0 +1,529 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cher Digital Analytics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Tailwind via CDN with your custom colors -->
+  
+ 
+ <link rel="stylesheet" href="css/styles.css">
+ <link rel="shortcut icon" href="assets/favicon.png">
+ <style>
+    body {
+    font-family: 'lora';
+    line-height: 1.8;
+    color: #f9f6f3;
+    margin: 0;
+    padding: 0;
+    /* background-color: #fff; */
+}
+
+.blog-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+li {
+    list-style: none;
+}
+.category {
+    color: #834a49;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.main-title {
+    font-size: 48px;
+    line-height: 1.1;
+    margin: 20px 0;
+    font-weight: 800;
+    color: #f8f6f3;
+}
+
+.author-meta {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.author-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.meta-info .author-name {
+    display: block;
+    font-weight: 700;
+}
+
+.publish-details {
+    font-size: 14px;
+    color: #f8f6f3;
+}
+
+.main-featured-image img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 40px;
+}
+
+.blog-content h2 {
+    font-size: 32px;
+    margin-top: 50px;
+    color: #f8f6f3;
+}
+
+.blog-content p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.intro-lead {
+    font-size: 20px !important;
+    /* font-style: italic; */
+    color: #fdf2ee;
+}
+
+.mid-post-ui {
+    background: #fdf2ee;
+    padding: 30px;
+    text-align: center;
+    font-size: 26px;
+    border-left: 6px solid #834a49;
+    margin: 40px 0;
+}
+
+.summary-box {
+    background: #f8f6f3;
+    color: #fff;
+    padding: 40px;
+    margin-top: 60px;
+    border-radius: 8px;
+}
+
+.summary-box h3 { color: #834a49; }
+
+.cta-button {
+    display: inline-block;
+    background: #834a49;
+    color: #f8f6f3;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+</style>
+ 
+</head>
+<body class="bg-olive text-cream min-h-screen flex flex-col">
+ 
+  <!-- NAVBAR sticky top-0 z-50 bg-olive/95 backdrop-blur border-b border-cream/10-->
+   <!-- Header section -->
+<!-- Header section -->
+ <header class="" id="header">
+   <nav class="navbar containers">
+      
+      <!-- LOGO -->
+      <a href="index.html" class="brand">
+         <img src="assets/images/logo.png" alt="Logo">
+      </a>
+
+      <!-- MENU -->
+      <div class="menu" id="menu" >
+         <ul class="menu-inner">
+          <a href="index.html" class="brand mobile-register">
+         <img src="assets/images/logo.png" alt="Logo">
+      </a>
+            <li class="menu-item"><a href="index.html#what-we-do" class="menu-link">What we do</a></li>
+            <li class="menu-item"><a href="packages.html" class="menu-link">Packages</a></li>
+                     <li class="menu-item"><a href="#" class="menu-link">Blogs</a></li>
+            <li class="menu-item"><a href="index.html#faq" class="menu-link">FAQ</a></li>
+            <li class="menu-item"><a href="audit.html" class="menu-link">Free Audit</a></li>
+             
+ 
+            <!-- REGISTER BUTTON (only visible on mobile) -->
+          
+ <div class="social">
+          <a href="https://www.instagram.com/cherdigitalanalytics?igsh=MTZ5dWk3Z3cyOTZ6NA%3D%3D&utm_source=qr"><img src="assets/images/instagram.png" ></a>
+          <a href="https://www.linkedin.com/company/cherdigitalanalytics/?viewAsMember=true"><img src="assets/images/linkedin.png"  ></a>
+      </div>
+             
+ 
+            <!-- REGISTER BUTTON (only visible on mobile) -->
+          
+<button type="button" class="cta-btns">
+         <a href="contact.html" class="btn btn-neutral">&nbsp;&nbsp; Contact &nbsp;&nbsp; </a>
+      </button>
+         </ul>
+      </div>
+
+      <!-- OVERLAY -->
+      <span class="overlay"></span>
+
+      <!-- REGISTER (DESKTOP ONLY) -->
+  
+
+      <!-- BURGER ICON -->
+      <div class="burger" id="burger">
+         <span class="burger-line"></span>
+         <span class="burger-line"></span>
+         <span class="burger-line"></span>
+      </div>
+   </nav>
+</header>
+ <article class="blog-container">
+    
+    <header class="blog-header">
+        <span class="category">SALON MARKETING</span>
+        <h1 class="main-title">5 Ways Salons Can Use Brevo (It's More Than an Email Marketing Tool)</h1>
+        
+        <div class="author-meta">
+            <img src="https://i.pravatar.cc/100?u=maichi" alt="Maichi" class="author-img">
+            <div class="meta-info">
+                <span class="author-name">Maichi</span>
+                <span class="publish-details">March 25, 2026 • 6 min read</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-featured-image">
+        <img src="assets/images/blog.png" alt="Modern Salon Management">
+    </div>
+
+    <div class="blog-content">
+        <p class="intro-lead">
+            Many salon owners think email marketing tools are only for sending newsletters. In reality, 
+modern platforms have evolved into full business systems that help manage leads, automate 
+communication and track bookings.
+
+        </p>
+        <p>Platforms like Brevo combine CRM, automation, messaging and analytics into one place. Instead of 
+juggling multiple tools for emails, client communication and lead tracking, salons can manage 
+everything from one system.
+
+
+</p>
+<p>For service businesses that rely on appointments and client relationships this can make a big 
+difference.
+</p>
+<p>Here are five ways salons can use Brevo to organize their marketing, streamline communication 
+and turn more inquiries into booked appointments.
+</p>
+
+
+        <h2>1. Capture and Organise Every Client Inquiry</h2>
+        <br>
+       <div class="main-featured-image">
+        <img src="assets/images/blog1.jpg" alt="Modern Salon Management">
+    </div>
+<p>Salons get inquiries from many different places Instagram DMs, WhatsApp messages, website 
+forms and phone calls. When these conversations are scattered across different platforms its hard 
+to track who inquired, what service they wanted and if they ever booked.
+.</p>
+<p>Using the CRM inside Brevo salons can store every client contact in one place.
+</p>
+<p>Each contact record can include:
+
+<ul>
+    <li>• Name and contact information
+</li>
+<li>• Service interest (hair, nails, skincare, bridal etc.)
+</li>
+<li>• Appointment history
+</li>
+<li>• Notes or tags from previous conversations</li>
+</ul></p>
+<p>Once contacts are organised its much easier to track every potential client from their first inquiry 
+to their final appointment.
+</p>
+<p>Instead of searching through scattered messages salon staff can quickly see where each lead is at</p>
+
+
+        <h2>2. Automate Follow-Ups With Potential Clients</h2>
+        <br>
+        <div class="main-featured-image">
+       <img src="assets/images/blog2.png" alt="Modern Salon Management">
+    </div>
+        <p>One of the biggest reasons salons lose bookings is missed follow ups.
+A client inquires about a service, gets one response and then the conversation dies. Without 
+reminders or additional messages many of these leads never convert into appointments.
+Automation solves this problem.
+</p>
+<p>Brevo allows salons to create workflows where certain actions trigger messages. For example:
+
+</p>
+<ul>
+    <li>• A client submits an inquiry → they get an automatic confirmation message.
+• A consultation is booked → reminder emails or SMS messages are sent.
+• A potential client doesnt respond → the system sends a follow up message.
+
+</li>
+</ul>
+<p>These automated messages keep the conversation active and reduce the risk of missed 
+opportunities.</p>
+
+        <h2>3. Send Targeted Email Campaigns and Promotions</h2>
+        <br>
+         <div class="main-featured-image">
+       <img src="assets/images/blog3.png" alt="Modern Salon Management">
+    </div>
+        <p>Email marketing is still one of the most reliable ways to stay in touch with existing and potential 
+clients.With Brevo salons can design and send professional email campaigns to promote services, 
+announce updates or share seasonal offers.
+</p>
+<p>Examples of email campaigns salons run include:
+
+</p>
+<ul>
+    <li>
+        • Holiday promotions
+
+    </li>
+    <li>• New service launches
+</li>
+<li>• Loyalty rewards for repeat clients
+</li>
+<li>• Special beauty packages or limited time discounts</li>
+
+
+</ul>
+<p>Brevo also provides analytics such as open rates and click rates so salon owners can see which 
+campaigns are getting the most interest.
+Over time this information helps refine marketing strategies and improve campaign performance.
+
+</p>
+
+        <h2>4. Manage Client Conversations in One Inbox</h2>
+        <br>
+         <div class="main-featured-image">
+        <img src="assets/images/all.png" alt="Modern Salon Management">
+    </div>
+        <p>Todays clients expect to communicate through multiple channels. A salon might get messages 
+from Instagram, Facebook, SMS, website chat and email all in one day.
+</p>
+<p>Switching between multiple apps can get overwhelming for staff members.
+</p>
+<p>Brevo provides a unified inbox where conversations from different channels can be managed in 
+one place. This allows salon teams to:
+
+</p>
+<ul>
+    <li>• View all messages from one dashboard
+• Respond to inquiries quickly
+• Track ongoing conversations with clients
+
+</li>
+</ul>
+<p>When every conversation is logged and searchable its much easier to maintain consistent 
+communication and deliver a better client experience.
+
+</p>
+        <h2>5. Track Marketing Performance With Real Analytics</h2>
+        <br>
+         <div class="main-featured-image">
+       <img src="assets/images/blog5.png" alt="Modern Salon Management">
+    </div>
+        pMany small businesses rely on guesswork when it comes to their marketing. Without data its hard 
+to know which campaigns are actually bringing in new clients.
+<p>Brevo provides analytics to help salons track:
+</p>
+<ul>
+    <li>• Email engagement rates</li>
+    <li>• Campaign performance
+</li>
+<li>
+    • Contact growth
+
+</li>
+<li>• Client activity over time
+
+</li>
+
+</ul>
+<p>These insights help salon owners know whats working and where to improve. Instead of making 
+assumptions marketing decisions can be made with real data.
+</p>
+        <div class="">
+            <h3>Turning Salon Inquiries Into a System</h3>
+            <p>The most successful salons dont rely on scattered messages or manual follow ups. They build 
+systems that capture inquiries, organise leads, automate communication and track performance.
+
+.</p>
+<p>When these pieces work together the process is simple:
+Leads are captured → contacts are organised → automation follows up → conversations continue 
+→ analytics reveal what drives bookings.
+</p>
+<p>This kind of system reduces missed opportunities and helps salons focus on what matters most: 
+delivering great services to their clients.
+
+</p>
+<h3>Try Brevo for Your Salon?
+
+</h3>
+<p>If you want to see how these tools work in practice you can try the platform yourself. Brevo has 
+tools for CRM management, marketing automation, email campaigns and customer 
+communication in one system.
+
+</p>
+            <a href="#" class="cta-button">Try Brevo for Your Salon</a>
+        </div>
+    </div>
+</article>
+
+  
+ <!-- FOOTER -->
+<!-- Updated footer matching screenshot -->
+ <footer class="footer">
+  <div class="footer-container">
+    
+    <!-- Top Section -->
+    <div class="footer-top">
+      
+      <!-- Left Section -->
+      <div class="footer-about">
+        <h2>Cher Digital Analytics</h2>
+        <p>Empowering local brands with simple dashboards and actionable insights.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h3>QUICK LINKS</h3>
+        <ul>
+          <li><a href="index.html#what-we-do">What We Do</a></li>
+           <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="footer-contact" id="content-desktop">
+        &nbsp;</div> <div class="footer-contact" id="content-desktop">
+        &nbsp;</div> <div class="footer-contact" id="content-desktop">
+        &nbsp;</div> 
+       <div class="footer-contact">
+        <h3>GET IN TOUCH</h3>
+        <p>(413) 377-8945</p>
+        <p><a href="mailto:hello@cherdigitalanalytics.com">hello@cherdigitalanalytics.com</a></p>
+         <div class="social">
+          <a href="https://www.instagram.com/cherdigitalanalytics?igsh=MTZ5dWk3Z3cyOTZ6NA%3D%3D&utm_source=qr"><img src="assets/images/instagram.png" ></a>
+          <a href="https://www.linkedin.com/company/cherdigitalanalytics/?viewAsMember=true"><img src="assets/images/linkedin.png"  ></a>
+      </div>
+
+    </div>
+
+    <!-- Bottom Section -->
+<div class="container" style="padding: 0px;">
+  <div class="row footer-bottom">
+    <p>© 2025 Cher Digital Analytics. All rights reserved.</p>
+    <a href="privacy.html">Privacy Policy</a>
+  </div>
+</div>
+
+  </div>
+</footer>
+
+
+
+ <script src="js/main.js"></script>
+ <script src="js/all.js"></script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script defer src="https://unpkg.com/@alpinejs/morph@3.x.x/dist/cdn.min.js"></script>
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.plugin(window.AlpineMorph)
+    })
+</script>
+<script>
+function textLooper() {
+  return {
+    texts: [
+      "DISCOVER WHAT DRIVES<br>YOUR BUSINESS.",
+      "UNLOCK YOUR GROWTH<br>POTENTIAL.",
+      "START WITH A FREE SITE <br>AUDIT.",
+      "TRANSFORM DATA INTO<br>ACTION."
+    ],
+    index: 0,
+    state: 'show',
+
+    init() {
+      setInterval(() => {
+        this.state = 'hide';
+
+        setTimeout(() => {
+          this.index = (this.index + 1) % this.texts.length;
+          this.state = 'show';
+        }, 800);
+
+      }, 3000);
+    }
+  }
+}
+</script>
+<script>
+document.querySelectorAll(".faq").forEach(faq => {
+  const header = faq.querySelector(".faq-header");
+
+  header.addEventListener("click", () => {
+
+    // close others
+    document.querySelectorAll(".faq").forEach(item => {
+      if (item !== faq) item.classList.remove("open");
+    });
+
+    // toggle this one
+    faq.classList.toggle("open");
+  });
+});
+</script>
+ <script>
+// Disable Right Click
+document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+    return false;
+});
+
+// Disable shortcuts continuously
+document.addEventListener("keydown", function(e) {
+    // Block F12
+    if (e.key === "F12") {
+        e.preventDefault();
+        return false;
+    }
+
+    // Block Ctrl+U
+    if (e.ctrlKey && e.key.toLowerCase() === "u") {
+        e.preventDefault();
+        return false;
+    }
+
+    // Block Ctrl+Shift+I / C / J
+    if (e.ctrlKey && e.shiftKey && ["i","c","j"].includes(e.key.toLowerCase())) {
+        e.preventDefault();
+        return false;
+    }
+});
+
+// Disable text selection & copy
+document.addEventListener("selectstart", e => e.preventDefault());
+document.addEventListener("copy", e => e.preventDefault());
+</script>
+
+<style>
+/* Extra layer with CSS */
+body {
+    user-select: none;   /* Disable text selection */
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+</style>
+ 
+</body>
+</html>
