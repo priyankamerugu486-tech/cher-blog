@@ -1,0 +1,533 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cher Digital Analytics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Tailwind via CDN with your custom colors -->
+  
+ 
+ <link rel="stylesheet" href="css/styles.css">
+ <link rel="shortcut icon" href="assets/favicon.png">
+ <style>
+    body { font-family: sans-serif; }
+
+.blog-wrapper {
+  max-width: 1200px; 
+  width: 90%;
+  margin: 0 auto;
+  padding: 100px 20px;
+  display: grid;
+ 
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); 
+  gap: 20px;
+}
+
+.blog-grid {
+  display: grid;
+ 
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); 
+  gap: 20px;
+}
+
+.post-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.image-wrapper { position: relative; }
+.image-wrapper img { width: 100%; object-fit: cover; }
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: -5px;
+  background: #f15a24;
+  color: #fff;
+  padding: 3px 10px;
+  font-size: 10px;
+  font-weight: bold;
+  transform: rotate(-3deg);
+}
+
+.content { padding: 20px; flex-grow: 1; }
+
+.meta-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: bold;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 18px;
+  color: #222;
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.excerpt {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.author-section {
+  padding: 15px 20px;
+  /* border-top: 1px solid #c49797; */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.author-img { width: 35px; height: 35px; border-radius: 50%; }
+
+.author-info { flex-grow: 1; }
+.author-info strong { display: block; font-size: 13px; color: #333; }
+.author-info span { font-size: 11px; color: #999; }
+
+.date-box { font-size: 11px; color: #999; }
+.post-card {
+  max-width: 400px;
+  /* border: 1px solid #e0e0e0; */
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.post-card:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.read-more-btn {
+  display: inline-block;
+  margin-top: 15px;
+  color: #834A49; 
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.author-section {
+  background: #fdfdfd;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #eee;
+}
+/* =========================================
+   1.(Popup Overlay)
+   ========================================= */
+.popup-overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    display: none;
+    justify-content: center;
+    align-items: center; 
+    z-index: 9999;
+    opacity: 0; 
+    transition: opacity 0.5s ease; /*
+}
+
+/* =========================================
+   2.  (Popup Box Design)
+   ========================================= */
+.popup-box {
+    background-color: #ffffff; 
+    padding: 40px; 
+    border-radius: 15px;
+    width: 90%; 
+    max-width: 500px; 
+    position: relative;
+    text-align: center; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(0.7); 
+    transition: transform 0.5s ease;
+}
+
+/* =========================================
+   3.  (Show State)
+   ========================================= */
+/* JavaScript 'show'
+.popup-overlay.show {
+    display: flex; /*  */
+    opacity: 1; 
+}
+
+.popup-overlay.show .popup-box {
+    transform: scale(1); /*  */
+}
+
+/* =========================================
+   4. (X)  (Close Button)
+   ========================================= */
+.close-popup {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #999; 
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    line-height: 1;
+}
+
+.close-popup:hover {
+    color: #333; /* */
+}
+
+/* =========================================
+   5.  (Text Styles)
+   ========================================= */
+.popup-box h2 {
+    margin-top: 0;
+    color: #2c3e50; /* ముదురు రంగు */
+    font-size: 26px;
+    margin-bottom: 15px;
+    font-family: sans-serif; /* మీ వెబ్‌సైట్ ఫాంట్‌ను ఉపయోగించండి */
+}
+
+.popup-box p {
+    color: #7f8c8d; /* బూడిద రంగు */
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+}
+
+/* =========================================
+  
+   ========================================= */
+.popup-btn {
+    background-color: #e67e22; 
+    color: #ffffff; 
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px; /* పూర్తిగా గుండ్రటి మూలలు */
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase; /* పెద్ద అక్షరాలు */
+    letter-spacing: 1px; /* అక్షరాల మధ్య ఖాళీ */
+    cursor: pointer;
+    text-decoration: none; /* అండర్ లైన్ తొలగించడానికి */
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3); /* బటన్ కింద నీడ */
+}
+
+.popup-btn:hover {
+    background-color: #d35400; /* హోవర్ చేసినప్పుడు ముదురు ఆరెంజ్ */
+    transform: translateY(-2px); /* కొద్దిగా పైకి లేచినట్లు అనిపించడానికి */
+}
+
+.popup-btn:active {
+    transform: translateY(1px); 
+}
+ </style>
+</head>
+<body class="bg-olive text-cream min-h-screen flex flex-col">
+ 
+  <!-- NAVBAR sticky top-0 z-50 bg-olive/95 backdrop-blur border-b border-cream/10-->
+   <!-- Header section -->
+<!-- Header section -->
+ <header class="" id="header">
+   <nav class="navbar containers">
+      
+      <!-- LOGO -->
+      <a href="index.html" class="brand">
+         <img src="assets/images/logo.png" alt="Logo">
+      </a>
+
+      <!-- MENU -->
+      <div class="menu" id="menu" >
+         <ul class="menu-inner">
+          <a href="index.html" class="brand mobile-register">
+         <img src="assets/images/logo.png" alt="Logo">
+      </a>
+            <li class="menu-item"><a href="index.html#what-we-do" class="menu-link">What we do</a></li>
+            <li class="menu-item"><a href="packages.html" class="menu-link">Packages</a></li>
+                     <li class="menu-item"><a href="#" class="menu-link">Blogs</a></li>
+                      <li class="menu-item"><a href="careers.html" class="menu-link">Careers</a></li>
+            <li class="menu-item"><a href="index.html#faq" class="menu-link">FAQ</a></li>
+            <li class="menu-item"><a href="audit.html" class="menu-link">Free Audit</a></li>
+             
+ 
+            <!-- REGISTER BUTTON (only visible on mobile) -->
+          
+ <div class="social">
+          <a href="https://www.instagram.com/cherdigitalanalytics?igsh=MTZ5dWk3Z3cyOTZ6NA%3D%3D&utm_source=qr"><img src="assets/images/instagram.png" ></a>
+          <a href="https://www.linkedin.com/company/cherdigitalanalytics/?viewAsMember=true"><img src="assets/images/linkedin.png"  ></a>
+      </div>
+             
+ 
+            <!-- REGISTER BUTTON (only visible on mobile) -->
+          
+<button type="button" class="cta-btns">
+         <a href="contact.html" class="btn btn-neutral">&nbsp;&nbsp; Contact &nbsp;&nbsp; </a>
+      </button>
+         </ul>
+      </div>
+
+      <!-- OVERLAY -->
+      <span class="overlay"></span>
+
+      <!-- REGISTER (DESKTOP ONLY) -->
+  
+
+      <!-- BURGER ICON -->
+      <div class="burger" id="burger">
+         <span class="burger-line"></span>
+         <span class="burger-line"></span>
+         <span class="burger-line"></span>
+      </div>
+   </nav>
+</header>
+<div class="blog-wrapper">
+  <article class="post-card">
+    <div class="image-wrapper">
+      <img src="assets/images/blog.png" alt="Brevo Salon Marketing">
+      <span class="badge">NEW</span>
+    </div>
+    <div class="content">
+      <div class="meta-top">
+        <span class="category">SALON MARKETING</span>
+        <span class="read-time">🕒 6 mins read</span>
+      </div>
+      <h2 class="title">5 Ways Salons Can Use Brevo (It's More Than an Email Marketing Tool)</h2>
+      <p class="excerpt">Instead of juggling multiple tools for emails, client communication and lead tracking, salons can manage everything from one system.</p>
+      <a href="blog-detail.html" class="read-more-btn">Read the Blog →</a>
+    </div>
+    <div class="author-section">
+      <img src="https://i.pravatar.cc/50?u=maichi" class="author-img">
+      <div class="author-info">
+        <strong>Cher</strong>
+      </div>
+      <div class="date-box">Mar 25</div>
+    </div>
+  </article>
+   <article class="post-card">
+    <div class="image-wrapper">
+      <img src="assets/images/blog.png" alt="Brevo Salon Marketing">
+      <span class="badge">NEW</span>
+    </div>
+    <div class="content">
+      <div class="meta-top">
+        <span class="category">SALON MARKETING</span>
+        <span class="read-time">🕒 6 mins read</span>
+      </div>
+      <h2 class="title">5 Ways Salons Can Use Brevo (It's More Than an Email Marketing Tool)</h2>
+      <p class="excerpt">Instead of juggling multiple tools for emails, client communication and lead tracking, salons can manage everything from one system.</p>
+      <a href="blog-detail.html" class="read-more-btn">Read the Blog →</a>
+    </div>
+    <div class="author-section">
+      <img src="https://i.pravatar.cc/50?u=maichi" class="author-img">
+      <div class="author-info">
+        <strong>Cher</strong>
+      </div>
+      <div class="date-box">Mar 25</div>
+    </div>
+  </article>
+   <article class="post-card">
+    <div class="image-wrapper">
+      <img src="assets/images/blog.png" alt="Brevo Salon Marketing">
+      <span class="badge">NEW</span>
+    </div>
+    <div class="content">
+      <div class="meta-top">
+        <span class="category">SALON MARKETING</span>
+        <span class="read-time">🕒 6 mins read</span>
+      </div>
+      <h2 class="title">5 Ways Salons Can Use Brevo (It's More Than an Email Marketing Tool)</h2>
+      <p class="excerpt">Instead of juggling multiple tools for emails, client communication and lead tracking, salons can manage everything from one system.</p>
+      <a href="blog-detail.html" class="read-more-btn">Read the Blog →</a>
+    </div>
+    <div class="author-section">
+      <img src="https://i.pravatar.cc/50?u=maichi" class="author-img">
+      <div class="author-info">
+        <strong>Cher</strong>
+      </div>
+      <div class="date-box">Mar 25</div>
+    </div>
+  </article>
+</div>
+
+  <!-- FOOTER -->
+<!-- Updated footer matching screenshot -->
+ <footer class="footer">
+  <div class="footer-container">
+    
+    <!-- Top Section -->
+    <div class="footer-top">
+      
+      <!-- Left Section -->
+      <div class="footer-about">
+        <h2>Cher Digital Analytics</h2>
+        <p>Empowering local brands with simple dashboards and actionable insights.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h3>QUICK LINKS</h3>
+        <ul>
+          <li><a href="index.html#what-we-do">What We Do</a></li>
+           <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="footer-contact" id="content-desktop">
+        &nbsp;</div> <div class="footer-contact" id="content-desktop">
+        &nbsp;</div> <div class="footer-contact" id="content-desktop">
+        &nbsp;</div>
+        <div class="footer-contact">
+        &nbsp;</div>  
+       <div class="footer-contact">
+        <h3>GET IN TOUCH</h3>
+        <p>(413) 377-8945</p>
+        <p><a href="mailto:hello@cherdigitalanalytics.com">hello@cherdigitalanalytics.com</a></p>
+         <div class="social">
+          <a href="https://www.instagram.com/cherdigitalanalytics?igsh=MTZ5dWk3Z3cyOTZ6NA%3D%3D&utm_source=qr"><img src="assets/images/instagram.png" ></a>
+          <a href="https://www.linkedin.com/company/cherdigitalanalytics/?viewAsMember=true"><img src="assets/images/linkedin.png"  ></a>
+      </div>
+
+    </div>
+
+    <!-- Bottom Section -->
+<div class="container"style="padding: 0px;">
+  <div class="row footer-bottom">
+    <p>© 2025 Cher Digital Analytics. All rights reserved.</p>
+    <a href="privacy.html">Privacy Policy</a>
+  </div>
+</div>
+
+  </div>
+</footer>
+<div class="popup-overlay" id="auditPopup">
+    <div class="popup-box">
+        <button class="close-popup" id="closePopupBtn">&times;</button>
+        <h2>What is your website score?</h2>
+        <p>Discover your weaknesses with our free website audit. It only takes 60 seconds!</p>
+        <a href="https://yourwebsite.com/free-audit" class="popup-btn">Yes, give me my free audit</a>
+    </div>
+</div>
+
+
+
+ <script src="js/main.js"></script>
+ <script src="js/all.js"></script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script defer src="https://unpkg.com/@alpinejs/morph@3.x.x/dist/cdn.min.js"></script>
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.plugin(window.AlpineMorph)
+    })
+</script>
+<script>
+function textLooper() {
+  return {
+    texts: [
+      "DISCOVER WHAT DRIVES<br>YOUR BUSINESS.",
+      "UNLOCK YOUR GROWTH<br>POTENTIAL.",
+      "START WITH A FREE SITE <br>AUDIT.",
+      "TRANSFORM DATA INTO<br>ACTION."
+    ],
+    index: 0,
+    state: 'show',
+
+    init() {
+      setInterval(() => {
+        this.state = 'hide';
+
+        setTimeout(() => {
+          this.index = (this.index + 1) % this.texts.length;
+          this.state = 'show';
+        }, 800);
+
+      }, 3000);
+    }
+  }
+}
+</script>
+ 
+ <script>
+// Disable Right Click
+document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+    return false;
+});
+
+// Disable shortcuts continuously
+document.addEventListener("keydown", function(e) {
+    // Block F12
+    if (e.key === "F12") {
+        e.preventDefault();
+        return false;
+    }
+
+    // Block Ctrl+U
+    if (e.ctrlKey && e.key.toLowerCase() === "u") {
+        e.preventDefault();
+        return false;
+    }
+
+    // Block Ctrl+Shift+I / C / J
+    if (e.ctrlKey && e.shiftKey && ["i","c","j"].includes(e.key.toLowerCase())) {
+        e.preventDefault();
+        return false;
+    }
+});
+
+// Disable text selection & copy
+document.addEventListener("selectstart", e => e.preventDefault());
+document.addEventListener("copy", e => e.preventDefault());
+
+    // The function runs after the page loads
+    window.onload = function() {
+        // Set a time delay of 2 seconds (2000 milliseconds)
+        setTimeout(function() {
+            // Open the popup (by adding the 'show' class)
+            document.getElementById('auditPopup').classList.add('show');
+        }, 2000); 
+    };
+
+    // Close the popup when the close button is clicked
+    document.getElementById('closePopupBtn').onclick = function() {
+        document.getElementById('auditPopup').classList.remove('show');
+    };
+
+    // Close the popup when clicking outside the popup box (on the overlay)
+    window.onclick = function(event) {
+        let overlay = document.getElementById('auditPopup');
+        if (event.target == overlay) {
+            overlay.classList.remove('show');
+        }
+    }
+
+</script>
+
+<style>
+/* Extra layer with CSS */
+body {
+    user-select: none;   /* Disable text selection */
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+</style>
+</body>
+</html>
